@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ski Trip Dinners | Montriond 2025</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="active">Dinners</a>
+    <a href="shopping.html">Shopping List</a>
+  </nav>
+
+  <main>
+    <header class="header">
+      <h1>Ski Trip Dinners</h1>
+      <p class="location">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Montriond, France
+      </p>
+      <div class="meta">
+        <span class="meta-item">11 People</span>
+        <span class="meta-item">2 Vegan</span>
+        <span class="meta-item">6 Nights</span>
+      </div>
+    </header>
+
+    <div id="meals-container"></div>
+  </main>
+
+  <script src="data.js"></script>
+  <script>
+    const container = document.getElementById('meals-container');
+    const chevronSvg = `<svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>`;
+
+    meals.forEach(meal => {
+      if (meal.dishes.length === 0) return;
+
+      const card = document.createElement('div');
+      card.className = 'meal-card';
+
+      // Group dishes by type
+      const mains = meal.dishes.filter(d => d.type === 'main');
+      const vegan = meal.dishes.filter(d => d.type === 'vegan');
+      const sides = meal.dishes.filter(d => d.type === 'side');
+      const sauces = meal.dishes.filter(d => d.type === 'sauce');
+      const prep = meal.dishes.filter(d => d.type === 'prep');
+
+      // Helper to render dish with ingredients
+      const renderDish = (d, meal) => {
+        const ingredientsList = d.ingredients.map(ingName => {
+          const details = meal.ingredients.find(i => i.item === ingName);
+          const cat = details ? details.category : 'dry';
+          const qty = details ? details.qty : '';
+          return `<li><span class="dot ${cat}"></span>${ingName}${qty ? ' · ' + qty : ''}</li>`;
+        }).join('');
+
+        return `
+          <div class="dish-item ${d.type}" data-dish="${d.name}">
+            <div class="dish-name">${d.name}</div>
+            <div class="dish-meta">${d.type}</div>
+            <div class="dish-ingredients">
+              <ul>${ingredientsList}</ul>
+            </div>
+          </div>
+        `;
+      };
+
+      card.innerHTML = `
+        <div class="meal-header">
+          <h2>${meal.name}</h2>
+          <span class="day-badge">${meal.day}</span>
+        </div>
+        <div class="meal-content">
+          <div class="dishes-section">
+            <h3>On the Menu</h3>
+            <div class="dishes-grid">
+              ${mains.map(d => renderDish(d, meal)).join('')}
+              ${vegan.map(d => renderDish(d, meal)).join('')}
+              ${sides.map(d => renderDish(d, meal)).join('')}
+              ${sauces.map(d => renderDish(d, meal)).join('')}
+              ${prep.map(d => renderDish(d, meal)).join('')}
+            </div>
+          </div>
+
+          <button class="section-toggle" data-section="ingredients-${meal.id}">
+            <h3>Ingredients (${meal.ingredients.length})</h3>
+            ${chevronSvg}
+          </button>
+          <div class="section-content" id="ingredients-${meal.id}">
+            <div class="ingredients-grid">
+              ${meal.ingredients.map(i => `
+                <span class="ingredient-tag">
+                  <span class="cat ${i.category}"></span>
+                  ${i.item} · ${i.qty}
+                </span>
+              `).join('')}
+            </div>
+          </div>
+
+          <button class="section-toggle" data-section="prep-before-${meal.id}">
+            <h3>Prep Before</h3>
+            ${chevronSvg}
+          </button>
+          <div class="section-content" id="prep-before-${meal.id}">
+            <ul class="prep-list">
+              ${meal.prepBefore.map(p => `<li>${p}</li>`).join('')}
+            </ul>
+          </div>
+
+          <button class="section-toggle" data-section="same-day-${meal.id}">
+            <h3>Same Day</h3>
+            ${chevronSvg}
+          </button>
+          <div class="section-content" id="same-day-${meal.id}">
+            <ul class="prep-list">
+              ${meal.prepSameDay.map(p => `<li>${p}</li>`).join('')}
+            </ul>
+          </div>
+
+          ${meal.brineRecipe ? `
+          <button class="section-toggle" data-section="brine-${meal.id}">
+            <h3>Brine Recipe</h3>
+            ${chevronSvg}
+          </button>
+          <div class="section-content" id="brine-${meal.id}">
+            <div class="recipe-card">
+              <h4>${meal.brineRecipe.title}</h4>
+              <div class="recipe-ingredients">
+                <strong>Ingredients:</strong>
+                <ul>${meal.brineRecipe.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+              </div>
+              <div class="recipe-steps">
+                <strong>Steps:</strong>
+                <ol>${meal.brineRecipe.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+              </div>
+            </div>
+          </div>
+          ` : ''}
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+
+    // Toggle sections
+    document.querySelectorAll('.section-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sectionId = btn.dataset.section;
+        const section = document.getElementById(sectionId);
+        btn.classList.toggle('open');
+        section.classList.toggle('open');
+      });
+    });
+
+    // Toggle dish ingredients on click
+    document.querySelectorAll('.dish-item').forEach(dish => {
+      dish.addEventListener('click', () => {
+        dish.classList.toggle('expanded');
+      });
+    });
+  </script>
+</body>
+</html>

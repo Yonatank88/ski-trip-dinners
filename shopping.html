@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping List | Ski Trip Dinners</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Dinners</a>
+    <a href="shopping.html" class="active">Shopping List</a>
+  </nav>
+
+  <main>
+    <header class="header">
+      <h1>Shopping List</h1>
+      <p class="location">Tap items to mark as bought</p>
+    </header>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="meat">Meat</button>
+      <button class="filter" data-filter="dairy">Dairy</button>
+      <button class="filter" data-filter="veg">Veg</button>
+      <button class="filter" data-filter="dry">Dry</button>
+    </div>
+
+    <div id="shopping-container"></div>
+
+    <button id="clear-btn">Clear All Checked</button>
+  </main>
+
+  <script src="data.js"></script>
+  <script>
+    const container = document.getElementById('shopping-container');
+    const STORAGE_KEY = 'ski-trip-shopping';
+
+    function getChecked() {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    }
+
+    function saveChecked(checked) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(checked));
+    }
+
+    function render(filter = 'all') {
+      const list = getShoppingList();
+      const checked = getChecked();
+      container.innerHTML = '';
+
+      const filtered = filter === 'all' ? list : list.filter(i => i.category === filter);
+
+      let currentCategory = '';
+      filtered.forEach(item => {
+        if (item.category !== currentCategory) {
+          currentCategory = item.category;
+          const header = document.createElement('h2');
+          header.className = `category-header ${currentCategory}`;
+          header.textContent = currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1);
+          container.appendChild(header);
+        }
+
+        const div = document.createElement('div');
+        div.className = `shopping-item ${checked[item.item] ? 'checked' : ''}`;
+        div.innerHTML = `
+          <label>
+            <input type="checkbox" ${checked[item.item] ? 'checked' : ''}>
+            <span class="item-name">${item.item}</span>
+            <span class="item-qty">${item.qty}</span>
+          </label>
+          <span class="item-meals">${item.meals.join(', ')}</span>
+        `;
+
+        const checkbox = div.querySelector('input');
+        checkbox.addEventListener('change', () => {
+          const c = getChecked();
+          if (checkbox.checked) {
+            c[item.item] = true;
+            div.classList.add('checked');
+          } else {
+            delete c[item.item];
+            div.classList.remove('checked');
+          }
+          saveChecked(c);
+        });
+
+        container.appendChild(div);
+      });
+    }
+
+    document.querySelectorAll('.filter').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        render(btn.dataset.filter);
+      });
+    });
+
+    document.getElementById('clear-btn').addEventListener('click', () => {
+      if (confirm('Clear all checked items?')) {
+        localStorage.removeItem(STORAGE_KEY);
+        render(document.querySelector('.filter.active').dataset.filter);
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>
