@@ -24,6 +24,11 @@ const meals = [
         name: "Green Salad",
         type: "side",
         ingredients: ["Mixed greens", "Cherry tomatoes", "Cucumber"]
+      },
+      {
+        name: "Roast Pumpkin",
+        type: "side",
+        ingredients: ["Pumpkin", "Olive oil", "Cumin", "Paprika", "Cinnamon"]
       }
     ],
     ingredients: [
@@ -38,6 +43,10 @@ const meals = [
       { item: "Cherry tomatoes", category: "veg", qty: "500g" },
       { item: "Cucumber", category: "veg", qty: "2" },
       { item: "Onions", category: "veg", qty: "2" },
+      { item: "Pumpkin", category: "veg", qty: "1" },
+      { item: "Cumin", category: "dry", qty: "1" },
+      { item: "Paprika", category: "dry", qty: "1" },
+      { item: "Cinnamon", category: "dry", qty: "1" },
       { item: "Olive oil", category: "dry", qty: "1" }
     ],
     prepBefore: [
@@ -49,6 +58,7 @@ const meals = [
       "Pan-fry or grill chicken cutlets (4-5min per side)",
       "Pan-fry or bake tofu until golden and crispy",
       "Cook rice pilaf",
+      "Roast pumpkin wedges with spices at 200°C (25-30min)",
       "Assemble green salad"
     ]
   },
