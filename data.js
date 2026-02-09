@@ -1,5 +1,61 @@
 const meals = [
   {
+    id: 0,
+    name: "Friday Prep",
+    night: "Arrival",
+    day: "Friday",
+    dishes: [
+      {
+        name: "Ragù (for Pasta Night)",
+        type: "prep",
+        ingredients: ["Minced beef (ragù)", "Tinned tomatoes", "Tomato paste", "Red wine", "Onions", "Celery", "Carrots (ragù)", "Garlic", "Olive oil"]
+      },
+      {
+        name: "Chicken Stock",
+        type: "prep",
+        ingredients: ["Chicken carcasses", "Onions", "Carrots", "Celery", "Bay leaves", "Peppercorns"]
+      },
+      {
+        name: "Veggie Prep",
+        type: "prep",
+        ingredients: ["Onions", "Carrots", "Garlic", "Pumpkin"]
+      },
+      {
+        name: "Meat Prep",
+        type: "prep",
+        ingredients: ["Chicken cutlets", "Roast beef (~1.5-2kg)", "Whole chickens"]
+      }
+    ],
+    ingredients: [
+      { item: "Minced beef (ragù)", category: "meat", qty: "1kg" },
+      { item: "Chicken carcasses", category: "meat", qty: "2" },
+      { item: "Tinned tomatoes", category: "dry", qty: "4 cans" },
+      { item: "Tomato paste", category: "dry", qty: "1" },
+      { item: "Red wine", category: "dry", qty: "1 bottle" },
+      { item: "Onions", category: "veg", qty: "4" },
+      { item: "Carrots", category: "veg", qty: "3" },
+      { item: "Carrots (ragù)", category: "veg", qty: "3" },
+      { item: "Celery", category: "veg", qty: "1 head" },
+      { item: "Garlic", category: "veg", qty: "2 heads" },
+      { item: "Bay leaves", category: "dry", qty: "4" },
+      { item: "Peppercorns", category: "dry", qty: "1 tsp" },
+      { item: "Olive oil", category: "dry", qty: "1" },
+      { item: "Pumpkin", category: "veg", qty: "1" }
+    ],
+    prepBefore: [
+      "Buy all ingredients on arrival"
+    ],
+    prepSameDay: [
+      "Start ragù — brown mince, add veg, tomatoes, wine, simmer 2-3hrs",
+      "Start chicken stock — roast carcasses, simmer with veg 2-3hrs",
+      "Chop and store veggies for the week (onions, carrots, garlic, pumpkin)",
+      "Marinate Night 1 chicken in lemon-basil-garlic mix",
+      "Press and marinate Night 1 tofu in lemon-basil-garlic mix",
+      "Coat Night 2 beef in mustard, refrigerate",
+      "Start Night 3 chicken brine"
+    ]
+  },
+  {
     id: 1,
     name: "Chicken Night",
     night: "Night 1",
