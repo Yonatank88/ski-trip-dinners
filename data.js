@@ -161,11 +161,6 @@ const meals = [
         ingredients: ["Roast beef (~1.5-2kg)", "Mustard (for beef)", "Beef stock"]
       },
       {
-        name: "Mushroom Wellington",
-        type: "vegan",
-        ingredients: ["Butternut squash", "Mushrooms (for Wellington)", "Puff pastry"]
-      },
-      {
         name: "Pan-Fried Replacement Meat",
         type: "vegan",
         ingredients: ["Vegan replacement meat", "Olive oil", "Garlic"]
@@ -191,18 +186,10 @@ const meals = [
         image: "images/potato-gratin.jpg",
         ingredients: ["Potatoes (gratin)", "Heavy cream", "Garlic", "Gruyère cheese", "Butter"]
       },
-      {
-        name: "Gravy (Regular & Vegan)",
-        type: "sauce",
-        ingredients: ["Beef stock", "Mushroom stock (vegan gravy)"]
-      }
     ],
     ingredients: [
       { item: "Roast beef (~1.5-2kg)", category: "meat", qty: "1" },
       { item: "Mustard (for beef)", category: "dry", qty: "1 jar" },
-      { item: "Butternut squash", category: "veg", qty: "2" },
-      { item: "Mushrooms (for Wellington)", category: "veg", qty: "500g" },
-      { item: "Puff pastry", category: "dry", qty: "1 pack" },
       { item: "Potatoes (for mash)", category: "veg", qty: "2kg" },
       { item: "Carrots", category: "veg", qty: "1kg" },
       { item: "Parsnips", category: "veg", qty: "500g" },
@@ -216,7 +203,6 @@ const meals = [
       { item: "Olive oil", category: "dry", qty: "1" },
       { item: "Vegan butter", category: "dairy", qty: "1" },
       { item: "Beef stock", category: "dry", qty: "2" },
-      { item: "Mushroom stock (vegan gravy)", category: "dry", qty: "2" },
       { item: "Potatoes (gratin)", category: "veg", qty: "1.5kg" },
       { item: "Heavy cream", category: "dairy", qty: "500ml" },
       { item: "Gruyère cheese", category: "dairy", qty: "150g" }
@@ -224,8 +210,7 @@ const meals = [
     prepBefore: [
       "Coat beef in mustard, refrigerate overnight",
       "Take beef out of fridge 1hr before cooking",
-      "Peel and chop all roast veggies",
-      "Prep mushroom Wellington (can assemble day before)"
+      "Peel and chop all roast veggies"
     ],
     prepSameDay: [
       "Roast beef (~20min per 500g + 20min)",
@@ -233,9 +218,7 @@ const meals = [
       "Make mash",
       "Pan-fry mushrooms in butter with thyme and garlic",
       "Pan-fry vegan replacement meat",
-      "Assemble and bake potato gratin (slice potatoes, layer with cream/garlic/cheese, bake 1hr at 180°C)",
-      "Make both gravies",
-      "Bake Wellington (25-30min)"
+      "Assemble and bake potato gratin (slice potatoes, layer with cream/garlic/cheese, bake 1hr at 180°C)"
     ]
   },
   {
@@ -260,11 +243,6 @@ const meals = [
         ingredients: ["Potatoes (roast)"]
       },
       {
-        name: "Homemade Coleslaw",
-        type: "side",
-        ingredients: ["Cabbage (coleslaw)", "Carrots (coleslaw)", "Mayonnaise", "Vegan mayo"]
-      },
-      {
         name: "Braised Leeks",
         type: "side",
         image: "images/braised-leeks.jpg",
@@ -277,9 +255,9 @@ const meals = [
         ingredients: ["Asparagus", "Fresh herbs", "Labneh", "Olive oil"]
       },
       {
-        name: "Garlic Aioli",
-        type: "sauce",
-        ingredients: ["Garlic", "Mayonnaise", "Vegan mayo", "Lemons"]
+        name: "Green Salad",
+        type: "side",
+        ingredients: ["Mixed greens", "Cherry tomatoes", "Cucumber", "Olive oil"]
       }
     ],
     ingredients: [
@@ -289,10 +267,6 @@ const meals = [
       { item: "Tahini", category: "dry", qty: "1 jar" },
       { item: "Potatoes (roast)", category: "veg", qty: "2kg" },
       { item: "Garlic", category: "veg", qty: "2 heads" },
-      { item: "Mayonnaise", category: "dairy", qty: "1 jar" },
-      { item: "Vegan mayo", category: "dry", qty: "1 jar" },
-      { item: "Cabbage (coleslaw)", category: "veg", qty: "1" },
-      { item: "Carrots (coleslaw)", category: "veg", qty: "3" },
       { item: "Lemons", category: "veg", qty: "3" },
       { item: "Fresh herbs (thyme, rosemary)", category: "veg", qty: "2 bunches" },
       { item: "Sugar", category: "dry", qty: "1" },
@@ -303,7 +277,10 @@ const meals = [
       { item: "Asparagus", category: "veg", qty: "2 bunches" },
       { item: "Fresh herbs", category: "veg", qty: "1 bunch" },
       { item: "Labneh", category: "dairy", qty: "200g" },
-      { item: "Olive oil", category: "dry", qty: "1" }
+      { item: "Olive oil", category: "dry", qty: "1" },
+      { item: "Mixed greens", category: "veg", qty: "2 bags" },
+      { item: "Cherry tomatoes", category: "veg", qty: "500g" },
+      { item: "Cucumber", category: "veg", qty: "2" }
     ],
     brineRecipe: {
       title: "Simple Chicken Brine",
@@ -317,8 +294,7 @@ const meals = [
     },
     prepBefore: [
       "Brine chickens for 12hrs (see brine recipe)",
-      "Remove from brine, pat dry, refrigerate uncovered 12hrs (crispy skin)",
-      "Make coleslaw (can do morning of)"
+      "Remove from brine, pat dry, refrigerate uncovered 12hrs (crispy skin)"
     ],
     prepSameDay: [
       "Remove chickens from brine, pat dry",
@@ -326,7 +302,6 @@ const meals = [
       "Roast chickens 1.5-2hrs at 180°C",
       "Roast cauliflower with tahini glaze",
       "Roast potatoes",
-      "Make garlic aioli (regular + vegan)",
       "Braise leeks in butter, white wine and stock (30-40min)",
       "Grill asparagus, plate with labneh and fresh herbs"
     ]
@@ -348,11 +323,6 @@ const meals = [
         ingredients: ["Sausages", "Mustard (Dijon + whole grain)"]
       },
       {
-        name: "BBQ Jackfruit",
-        type: "vegan",
-        ingredients: ["Jackfruit (canned)", "BBQ sauce", "Smoked paprika"]
-      },
-      {
         name: "Vegan Sausages",
         type: "vegan",
         ingredients: ["Vegan sausages", "Mustard (Dijon + whole grain)"]
@@ -364,16 +334,6 @@ const meals = [
         ingredients: ["Cauliflower (steaks)", "Olive oil", "Lemon juice", "Fresh herbs", "Tahini"]
       },
       {
-        name: "Creamy Potato Salad",
-        type: "side",
-        ingredients: ["Potatoes (salad)", "Vegan mayo"]
-      },
-      {
-        name: "Coleslaw",
-        type: "side",
-        ingredients: ["Cabbage (coleslaw)", "Vegan mayo"]
-      },
-      {
         name: "Crusty Baguettes",
         type: "side",
         ingredients: ["Crusty bread/baguettes"]
@@ -383,20 +343,21 @@ const meals = [
         type: "side",
         image: "images/mac-and-cheese.jpg",
         ingredients: ["Macaroni pasta", "Cheddar cheese", "Butter", "Milk", "Flour", "Bacon"]
+      },
+      {
+        name: "Green Salad",
+        type: "side",
+        ingredients: ["Mixed greens", "Cherry tomatoes", "Cucumber", "Olive oil"]
       }
     ],
     ingredients: [
       { item: "Pork ribs", category: "meat", qty: "2-3 racks" },
       { item: "Sausages", category: "meat", qty: "22" },
       { item: "Vegan sausages", category: "veg", qty: "4" },
-      { item: "Jackfruit (canned)", category: "dry", qty: "2 cans" },
       { item: "Cauliflower (steaks)", category: "veg", qty: "2" },
       { item: "Tahini", category: "dry", qty: "1 jar" },
       { item: "Fresh herbs", category: "veg", qty: "1 bunch" },
       { item: "Lemon juice", category: "dry", qty: "1 lemon" },
-      { item: "Potatoes (salad)", category: "veg", qty: "2kg" },
-      { item: "Cabbage (coleslaw)", category: "veg", qty: "1" },
-      { item: "Vegan mayo", category: "dry", qty: "1 jar" },
       { item: "Crusty bread/baguettes", category: "dry", qty: "3" },
       { item: "Macaroni pasta", category: "dry", qty: "500g" },
       { item: "Cheddar cheese", category: "dairy", qty: "300g" },
@@ -408,21 +369,20 @@ const meals = [
       { item: "Mustard (Dijon + whole grain)", category: "dry", qty: "2 jars" },
       { item: "Smoked paprika", category: "dry", qty: "1" },
       { item: "Brown sugar", category: "dry", qty: "1" },
-      { item: "Olive oil", category: "dry", qty: "1" }
+      { item: "Olive oil", category: "dry", qty: "1" },
+      { item: "Mixed greens", category: "veg", qty: "2 bags" },
+      { item: "Cherry tomatoes", category: "veg", qty: "500g" },
+      { item: "Cucumber", category: "veg", qty: "2" }
     ],
     prepBefore: [
-      "Dry rub or marinate ribs night before",
-      "Make potato salad (morning of or day before)",
-      "Prep BBQ jackfruit marinade"
+      "Dry rub or marinate ribs night before"
     ],
     prepSameDay: [
       "Slow cook ribs 2-3hrs at 150°C",
       "Glaze ribs and finish",
       "Cook sausages + vegan sausages",
       "Grill cauliflower steaks with oil, serve with tahini drizzle",
-      "Heat/cook BBQ jackfruit",
-      "Make mac and cheese — béchamel, mix with pasta, top with bacon, bake",
-      "Make coleslaw if not done"
+      "Make mac and cheese — béchamel, mix with pasta, top with bacon, bake"
     ]
   },
   {
@@ -462,6 +422,11 @@ const meals = [
         name: "Caprese Salad",
         type: "side",
         ingredients: ["Fresh mozzarella", "Tomatoes (caprese)", "Fresh basil", "Olive oil", "Balsamic glaze"]
+      },
+      {
+        name: "Green Salad",
+        type: "side",
+        ingredients: ["Mixed greens", "Cherry tomatoes", "Cucumber", "Olive oil"]
       }
     ],
     ingredients: [
@@ -488,7 +453,11 @@ const meals = [
       { item: "Fresh mozzarella", category: "dairy", qty: "400g" },
       { item: "Tomatoes (caprese)", category: "veg", qty: "6" },
       { item: "Fresh basil", category: "veg", qty: "1 bunch" },
-      { item: "Balsamic glaze", category: "dry", qty: "1 bottle" }
+      { item: "Balsamic glaze", category: "dry", qty: "1 bottle" },
+      { item: "Mixed greens", category: "veg", qty: "2 bags" },
+      { item: "Cherry tomatoes", category: "veg", qty: "500g" },
+      { item: "Cucumber", category: "veg", qty: "2" },
+      { item: "Olive oil", category: "dry", qty: "1" }
     ],
     prepBefore: [
       "Make ragù day before (better next day)",
