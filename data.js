@@ -6,19 +6,14 @@ const meals = [
     day: "Saturday",
     dishes: [
       {
-        name: "Lemon Herb Chicken Cutlets",
+        name: "Lemon Basil Chicken",
         type: "main",
-        ingredients: ["Chicken cutlets", "Olive oil", "Lemon juice", "Garlic", "Fresh herbs (thyme, rosemary)"]
+        ingredients: ["Chicken cutlets", "Olive oil", "Lemon juice", "Garlic", "Fresh basil"]
       },
       {
-        name: "Sticky Soy-Honey Chicken Thighs",
-        type: "main",
-        ingredients: ["Chicken thighs", "Soy sauce", "Honey", "Garlic", "Ginger", "Sesame seeds", "Spring onions"]
-      },
-      {
-        name: "Grilled Vegetable Platter",
+        name: "Lemon Basil Tofu",
         type: "vegan",
-        ingredients: ["Zucchini", "Bell peppers", "Eggplant", "Olive oil"]
+        ingredients: ["Firm tofu", "Olive oil", "Lemon juice", "Garlic", "Fresh basil"]
       },
       {
         name: "Rice Pilaf",
@@ -33,35 +28,26 @@ const meals = [
     ],
     ingredients: [
       { item: "Chicken cutlets", category: "meat", qty: "12" },
-      { item: "Chicken thighs", category: "meat", qty: "12" },
+      { item: "Firm tofu", category: "veg", qty: "2 blocks" },
       { item: "Lemon juice", category: "dry", qty: "2 lemons" },
-      { item: "Soy sauce", category: "dry", qty: "1 bottle" },
-      { item: "Honey", category: "dry", qty: "1 jar" },
-      { item: "Ginger", category: "veg", qty: "1 piece" },
-      { item: "Sesame seeds", category: "dry", qty: "1 bag" },
-      { item: "Spring onions", category: "veg", qty: "1 bunch" },
-      { item: "Zucchini", category: "veg", qty: "3" },
-      { item: "Bell peppers", category: "veg", qty: "4" },
-      { item: "Eggplant", category: "veg", qty: "2" },
+      { item: "Fresh basil", category: "veg", qty: "2 bunches" },
+      { item: "Garlic", category: "veg", qty: "1 head" },
       { item: "Basmati rice", category: "dry", qty: "1kg" },
       { item: "Chicken stock", category: "dry", qty: "1L" },
       { item: "Mixed greens", category: "veg", qty: "2 bags" },
       { item: "Cherry tomatoes", category: "veg", qty: "500g" },
       { item: "Cucumber", category: "veg", qty: "2" },
       { item: "Onions", category: "veg", qty: "2" },
-      { item: "Garlic", category: "veg", qty: "1 head" },
-      { item: "Fresh herbs (thyme, rosemary)", category: "veg", qty: "2 bunches" },
       { item: "Olive oil", category: "dry", qty: "1" }
     ],
     prepBefore: [
-      "Friday evening: Marinate cutlets in lemon-herb mix",
-      "Friday evening: Marinate thighs in soy-honey-ginger mix",
+      "Friday evening: Marinate chicken in lemon-basil-garlic mix",
+      "Friday evening: Press and marinate tofu in lemon-basil-garlic mix",
       "Refrigerate overnight"
     ],
     prepSameDay: [
-      "Pan-fry or grill cutlets (4-5min per side)",
-      "Roast thighs at 200°C (25-30min), glaze with marinade",
-      "Grill vegetables",
+      "Pan-fry or grill chicken cutlets (4-5min per side)",
+      "Pan-fry or bake tofu until golden and crispy",
       "Cook rice pilaf",
       "Assemble green salad"
     ]
