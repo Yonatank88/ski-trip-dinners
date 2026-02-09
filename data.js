@@ -11,6 +11,11 @@ const meals = [
         ingredients: ["Chicken cutlets", "Olive oil", "Lemon juice", "Garlic", "Fresh basil"]
       },
       {
+        name: "Raw White Fish",
+        type: "main",
+        ingredients: ["White fish fillets", "Lemon juice", "Olive oil", "Fresh basil"]
+      },
+      {
         name: "Lemon Basil Tofu",
         type: "vegan",
         ingredients: ["Firm tofu", "Olive oil", "Lemon juice", "Garlic", "Fresh basil"]
@@ -33,6 +38,7 @@ const meals = [
     ],
     ingredients: [
       { item: "Chicken cutlets", category: "meat", qty: "12" },
+      { item: "White fish fillets", category: "meat", qty: "4" },
       { item: "Firm tofu", category: "veg", qty: "2 blocks" },
       { item: "Lemon juice", category: "dry", qty: "2 lemons" },
       { item: "Fresh basil", category: "veg", qty: "2 bunches" },
