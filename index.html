@@ -57,9 +57,12 @@
         }).join('');
 
         return `
-          <div class="dish-item ${d.type}" data-dish="${d.name}">
-            <div class="dish-name">${d.name}</div>
-            <div class="dish-meta">${d.type}</div>
+          <div class="dish-item ${d.type}${d.image ? ' has-image' : ''}" data-dish="${d.name}">
+            ${d.image ? `<div class="dish-image"><img src="${d.image}" alt="${d.name}" loading="lazy"></div>` : ''}
+            <div class="dish-info">
+              <div class="dish-name">${d.name}</div>
+              <div class="dish-meta">${d.type}</div>
+            </div>
             <div class="dish-ingredients">
               <ul>${ingredientsList}</ul>
             </div>

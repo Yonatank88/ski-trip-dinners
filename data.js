@@ -24,6 +24,11 @@ const meals = [
         name: "Meat Prep",
         type: "prep",
         ingredients: ["Chicken cutlets", "Roast beef (~1.5-2kg)", "Whole chickens"]
+      },
+      {
+        name: "Pickles",
+        type: "prep",
+        ingredients: ["Radishes", "Red onions (pickling)", "White vinegar", "Sugar", "Salt"]
       }
     ],
     ingredients: [
@@ -40,7 +45,12 @@ const meals = [
       { item: "Bay leaves", category: "dry", qty: "4" },
       { item: "Peppercorns", category: "dry", qty: "1 tsp" },
       { item: "Olive oil", category: "dry", qty: "1" },
-      { item: "Pumpkin", category: "veg", qty: "1" }
+      { item: "Pumpkin", category: "veg", qty: "1" },
+      { item: "Radishes", category: "veg", qty: "2 bunches" },
+      { item: "Red onions (pickling)", category: "veg", qty: "4" },
+      { item: "White vinegar", category: "dry", qty: "500ml" },
+      { item: "Sugar", category: "dry", qty: "100g" },
+      { item: "Salt", category: "dry", qty: "1" }
     ],
     prepBefore: [
       "Buy all ingredients on arrival"
@@ -52,7 +62,8 @@ const meals = [
       "Marinate Night 1 chicken in lemon-basil-garlic mix",
       "Press and marinate Night 1 tofu in lemon-basil-garlic mix",
       "Coat Night 2 beef in mustard, refrigerate",
-      "Start Night 3 chicken brine"
+      "Start Night 3 chicken brine",
+      "Quick pickle radishes and red onions — slice, pour over hot brine (vinegar, sugar, salt), refrigerate"
     ]
   },
   {
@@ -90,6 +101,12 @@ const meals = [
         name: "Roast Pumpkin",
         type: "side",
         ingredients: ["Pumpkin", "Olive oil", "Cumin", "Paprika", "Cinnamon"]
+      },
+      {
+        name: "French Onion Soup",
+        type: "side",
+        image: "images/onion-soup.jpg",
+        ingredients: ["Onions (soup)", "Beef stock", "Butter", "Crusty bread/baguettes", "Gruyère cheese", "Fresh thyme"]
       }
     ],
     ingredients: [
@@ -105,11 +122,17 @@ const meals = [
       { item: "Cherry tomatoes", category: "veg", qty: "500g" },
       { item: "Cucumber", category: "veg", qty: "2" },
       { item: "Onions", category: "veg", qty: "2" },
+      { item: "Onions (soup)", category: "veg", qty: "6" },
+      { item: "Beef stock", category: "dry", qty: "1L" },
+      { item: "Gruyère cheese", category: "dairy", qty: "200g" },
+      { item: "Fresh thyme", category: "veg", qty: "1 bunch" },
+      { item: "Crusty bread/baguettes", category: "dry", qty: "1" },
       { item: "Pumpkin", category: "veg", qty: "1" },
       { item: "Cumin", category: "dry", qty: "1" },
       { item: "Paprika", category: "dry", qty: "1" },
       { item: "Cinnamon", category: "dry", qty: "1" },
-      { item: "Olive oil", category: "dry", qty: "1" }
+      { item: "Olive oil", category: "dry", qty: "1" },
+      { item: "Butter", category: "dairy", qty: "50g" }
     ],
     prepBefore: [
       "Friday evening: Marinate chicken in lemon-basil-garlic mix",
@@ -121,7 +144,9 @@ const meals = [
       "Pan-fry or bake tofu until golden and crispy",
       "Cook rice pilaf",
       "Roast pumpkin wedges with spices at 200°C (25-30min)",
-      "Assemble green salad"
+      "Assemble green salad",
+      "Slow-cook onion soup — caramelize onions, add stock, thyme, simmer 45min",
+      "Ladle soup into bowls, top with bread and Gruyère, grill until bubbly"
     ]
   },
   {
@@ -161,6 +186,12 @@ const meals = [
         ingredients: ["Mushrooms", "Butter", "Fresh thyme", "Garlic"]
       },
       {
+        name: "Potato Gratin",
+        type: "side",
+        image: "images/potato-gratin.jpg",
+        ingredients: ["Potatoes (gratin)", "Heavy cream", "Garlic", "Gruyère cheese", "Butter"]
+      },
+      {
         name: "Gravy (Regular & Vegan)",
         type: "sauce",
         ingredients: ["Beef stock", "Mushroom stock (vegan gravy)"]
@@ -185,7 +216,10 @@ const meals = [
       { item: "Olive oil", category: "dry", qty: "1" },
       { item: "Vegan butter", category: "dairy", qty: "1" },
       { item: "Beef stock", category: "dry", qty: "2" },
-      { item: "Mushroom stock (vegan gravy)", category: "dry", qty: "2" }
+      { item: "Mushroom stock (vegan gravy)", category: "dry", qty: "2" },
+      { item: "Potatoes (gratin)", category: "veg", qty: "1.5kg" },
+      { item: "Heavy cream", category: "dairy", qty: "500ml" },
+      { item: "Gruyère cheese", category: "dairy", qty: "150g" }
     ],
     prepBefore: [
       "Coat beef in mustard, refrigerate overnight",
@@ -199,6 +233,7 @@ const meals = [
       "Make mash",
       "Pan-fry mushrooms in butter with thyme and garlic",
       "Pan-fry vegan replacement meat",
+      "Assemble and bake potato gratin (slice potatoes, layer with cream/garlic/cheese, bake 1hr at 180°C)",
       "Make both gravies",
       "Bake Wellington (25-30min)"
     ]
@@ -232,7 +267,14 @@ const meals = [
       {
         name: "Braised Leeks",
         type: "side",
+        image: "images/braised-leeks.jpg",
         ingredients: ["Leeks", "Butter", "White wine", "Chicken stock"]
+      },
+      {
+        name: "Grilled Asparagus Salad",
+        type: "side",
+        image: "images/asparagus-salad-grilled.jpg",
+        ingredients: ["Asparagus", "Fresh herbs", "Labneh", "Olive oil"]
       },
       {
         name: "Garlic Aioli",
@@ -257,7 +299,11 @@ const meals = [
       { item: "Butter", category: "dairy", qty: "250g" },
       { item: "Leeks", category: "veg", qty: "6" },
       { item: "White wine", category: "dry", qty: "1 bottle" },
-      { item: "Chicken stock", category: "dry", qty: "500ml" }
+      { item: "Chicken stock", category: "dry", qty: "500ml" },
+      { item: "Asparagus", category: "veg", qty: "2 bunches" },
+      { item: "Fresh herbs", category: "veg", qty: "1 bunch" },
+      { item: "Labneh", category: "dairy", qty: "200g" },
+      { item: "Olive oil", category: "dry", qty: "1" }
     ],
     brineRecipe: {
       title: "Simple Chicken Brine",
@@ -281,7 +327,8 @@ const meals = [
       "Roast cauliflower with tahini glaze",
       "Roast potatoes",
       "Make garlic aioli (regular + vegan)",
-      "Braise leeks in butter, white wine and stock (30-40min)"
+      "Braise leeks in butter, white wine and stock (30-40min)",
+      "Grill asparagus, plate with labneh and fresh herbs"
     ]
   },
   {
@@ -311,6 +358,12 @@ const meals = [
         ingredients: ["Vegan sausages", "Mustard (Dijon + whole grain)"]
       },
       {
+        name: "Cauliflower Steak",
+        type: "vegan",
+        image: "images/cauliflower-steak.jpg",
+        ingredients: ["Cauliflower (steaks)", "Olive oil", "Lemon juice", "Fresh herbs", "Tahini"]
+      },
+      {
         name: "Creamy Potato Salad",
         type: "side",
         ingredients: ["Potatoes (salad)", "Vegan mayo"]
@@ -324,6 +377,12 @@ const meals = [
         name: "Crusty Baguettes",
         type: "side",
         ingredients: ["Crusty bread/baguettes"]
+      },
+      {
+        name: "Mac and Cheese",
+        type: "side",
+        image: "images/mac-and-cheese.jpg",
+        ingredients: ["Macaroni pasta", "Cheddar cheese", "Butter", "Milk", "Flour", "Bacon"]
       }
     ],
     ingredients: [
@@ -331,14 +390,25 @@ const meals = [
       { item: "Sausages", category: "meat", qty: "22" },
       { item: "Vegan sausages", category: "veg", qty: "4" },
       { item: "Jackfruit (canned)", category: "dry", qty: "2 cans" },
+      { item: "Cauliflower (steaks)", category: "veg", qty: "2" },
+      { item: "Tahini", category: "dry", qty: "1 jar" },
+      { item: "Fresh herbs", category: "veg", qty: "1 bunch" },
+      { item: "Lemon juice", category: "dry", qty: "1 lemon" },
       { item: "Potatoes (salad)", category: "veg", qty: "2kg" },
       { item: "Cabbage (coleslaw)", category: "veg", qty: "1" },
       { item: "Vegan mayo", category: "dry", qty: "1 jar" },
       { item: "Crusty bread/baguettes", category: "dry", qty: "3" },
+      { item: "Macaroni pasta", category: "dry", qty: "500g" },
+      { item: "Cheddar cheese", category: "dairy", qty: "300g" },
+      { item: "Butter", category: "dairy", qty: "50g" },
+      { item: "Milk", category: "dairy", qty: "500ml" },
+      { item: "Flour", category: "dry", qty: "2 tbsp" },
+      { item: "Bacon", category: "meat", qty: "200g" },
       { item: "BBQ sauce", category: "dry", qty: "1 bottle" },
       { item: "Mustard (Dijon + whole grain)", category: "dry", qty: "2 jars" },
       { item: "Smoked paprika", category: "dry", qty: "1" },
-      { item: "Brown sugar", category: "dry", qty: "1" }
+      { item: "Brown sugar", category: "dry", qty: "1" },
+      { item: "Olive oil", category: "dry", qty: "1" }
     ],
     prepBefore: [
       "Dry rub or marinate ribs night before",
@@ -349,7 +419,9 @@ const meals = [
       "Slow cook ribs 2-3hrs at 150°C",
       "Glaze ribs and finish",
       "Cook sausages + vegan sausages",
+      "Grill cauliflower steaks with oil, serve with tahini drizzle",
       "Heat/cook BBQ jackfruit",
+      "Make mac and cheese — béchamel, mix with pasta, top with bacon, bake",
       "Make coleslaw if not done"
     ]
   },
@@ -377,11 +449,13 @@ const meals = [
       {
         name: "Pasta Pomodoro",
         type: "vegan",
+        image: "images/pasta-pomodoro.jpg",
         ingredients: ["Pasta (egg-free for vegan)", "Tinned tomatoes", "Tomato paste", "Onions"]
       },
       {
         name: "Cold Asparagus Salad",
         type: "side",
+        image: "images/asparagus-salad-cold.jpg",
         ingredients: ["Asparagus", "Hazelnuts", "Green grapes", "Fresh dill", "Feta cheese", "Olive oil"]
       },
       {
@@ -435,10 +509,29 @@ const meals = [
     name: "TBD",
     night: "Night 6",
     day: "Thursday",
-    dishes: [],
-    ingredients: [],
+    dishes: [
+      {
+        name: "Tofu Pad Krapao",
+        type: "vegan",
+        image: "images/tofu-pad-krapao.jpg",
+        ingredients: ["Firm tofu", "Thai basil", "Garlic", "Chillies", "Soy sauce", "Oyster sauce (vegan)", "Rice"]
+      }
+    ],
+    ingredients: [
+      { item: "Firm tofu", category: "veg", qty: "2 blocks" },
+      { item: "Thai basil", category: "veg", qty: "2 bunches" },
+      { item: "Garlic", category: "veg", qty: "1 head" },
+      { item: "Chillies", category: "veg", qty: "4" },
+      { item: "Soy sauce", category: "dry", qty: "1 bottle" },
+      { item: "Oyster sauce (vegan)", category: "dry", qty: "1 bottle" },
+      { item: "Rice", category: "dry", qty: "1kg" }
+    ],
     prepBefore: [],
-    prepSameDay: []
+    prepSameDay: [
+      "Press and cube tofu, fry until crispy",
+      "Stir-fry garlic and chillies, add tofu, sauces, and Thai basil",
+      "Serve over steamed rice"
+    ]
   }
 ];
 
