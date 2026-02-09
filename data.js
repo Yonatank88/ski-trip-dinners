@@ -85,6 +85,11 @@ const meals = [
         ingredients: ["Butternut squash", "Mushrooms (for Wellington)", "Puff pastry"]
       },
       {
+        name: "Pan-Fried Replacement Meat",
+        type: "vegan",
+        ingredients: ["Vegan replacement meat", "Olive oil", "Garlic"]
+      },
+      {
         name: "Creamy Mash Potato",
         type: "side",
         ingredients: ["Potatoes (for mash)", "Vegan butter", "Olive oil"]
@@ -93,6 +98,11 @@ const meals = [
         name: "Roasted Root Vegetables",
         type: "side",
         ingredients: ["Carrots", "Parsnips", "Brussels sprouts", "Red onions", "Olive oil"]
+      },
+      {
+        name: "Pan-Fried Mushrooms",
+        type: "side",
+        ingredients: ["Mushrooms", "Butter", "Fresh thyme", "Garlic"]
       },
       {
         name: "Gravy (Regular & Vegan)",
@@ -111,6 +121,11 @@ const meals = [
       { item: "Parsnips", category: "veg", qty: "500g" },
       { item: "Brussels sprouts", category: "veg", qty: "500g" },
       { item: "Red onions", category: "veg", qty: "4" },
+      { item: "Mushrooms", category: "veg", qty: "1kg" },
+      { item: "Fresh thyme", category: "veg", qty: "1 bunch" },
+      { item: "Garlic", category: "veg", qty: "1 head" },
+      { item: "Butter", category: "dairy", qty: "100g" },
+      { item: "Vegan replacement meat", category: "veg", qty: "2 packs" },
       { item: "Olive oil", category: "dry", qty: "1" },
       { item: "Vegan butter", category: "dairy", qty: "1" },
       { item: "Beef stock", category: "dry", qty: "2" },
@@ -126,6 +141,8 @@ const meals = [
       "Roast beef (~20min per 500g + 20min)",
       "Roast veggies (45min at 200°C)",
       "Make mash",
+      "Pan-fry mushrooms in butter with thyme and garlic",
+      "Pan-fry vegan replacement meat",
       "Make both gravies",
       "Bake Wellington (25-30min)"
     ]
