@@ -237,6 +237,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   position: relative;
   overflow: hidden;
 }
@@ -273,6 +274,30 @@ main {
   text-transform: uppercase;
   border: 1px solid rgba(193, 127, 89, 0.3);
   position: relative;
+}
+
+.chefs-bitches {
+  width: 100%;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(193, 127, 89, 0.2);
+  position: relative;
+}
+
+.bitches-label {
+  color: var(--color-copper-light);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-right: 0.75rem;
+}
+
+.bitches-names {
+  color: var(--color-cream);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
 }
 
 .meal-content {

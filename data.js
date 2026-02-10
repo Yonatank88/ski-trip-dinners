@@ -87,6 +87,7 @@ const meals = [
       { item: "Sugar", category: "dry", qty: "100g" },
       { item: "Salt", category: "dry", qty: "1" }
     ],
+    helpers: [],
     prepBefore: [
       "Buy all ingredients on arrival"
     ],
@@ -193,6 +194,7 @@ const meals = [
         "Remove, pat very dry, refrigerate uncovered 12hrs for crispy skin"
       ]
     },
+    chefsBitches: ["Yaniv", "Phrim"],
     prepBefore: [
       "Brine chickens for 12hrs (see brine recipe)",
       "Coat beef in mustard, refrigerate overnight",
@@ -273,6 +275,7 @@ const meals = [
       { item: "Cucumber", category: "veg", qty: "2" },
       { item: "Apple", category: "veg", qty: "2" }
     ],
+    chefsBitches: ["Gal", "Regev"],
     prepBefore: [
       "Dry rub or marinate ribs night before"
     ],
@@ -365,6 +368,7 @@ const meals = [
       { item: "Cucumber", category: "veg", qty: "2" },
       { item: "Apple", category: "veg", qty: "2" }
     ],
+    chefsBitches: ["Omri", "Ynon"],
     prepBefore: [
       "Make ragù day before (better next day)",
       "Make chicken jus / reduce stock"
@@ -430,6 +434,7 @@ const meals = [
       { item: "Cucumber", category: "veg", qty: "2" },
       { item: "Apple", category: "veg", qty: "2" }
     ],
+    chefsBitches: ["Holtzman", "Roko"],
     prepBefore: [
       "Cut beef into chunks, marinate in wine overnight"
     ],
@@ -492,6 +497,7 @@ const meals = [
       { item: "Cucumber", category: "veg", qty: "2" },
       { item: "Apple", category: "veg", qty: "2" }
     ],
+    chefsBitches: ["Muroch", "Yaniv"],
     prepBefore: [
       "Shape burger patties if making from scratch"
     ],

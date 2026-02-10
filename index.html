@@ -74,6 +74,12 @@
         <div class="meal-header">
           <h2>${meal.name}</h2>
           <span class="day-badge">${meal.day}</span>
+          ${meal.chefsBitches && meal.chefsBitches.length > 0 ? `
+          <div class="chefs-bitches">
+            <span class="bitches-label">Chef's Bitches:</span>
+            <span class="bitches-names">${meal.chefsBitches.join(', ')}</span>
+          </div>
+          ` : ''}
         </div>
         <div class="meal-content">
           <div class="dishes-section">
