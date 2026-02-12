@@ -1,8 +1,8 @@
 # Ski Trip Food Planning
 
 ## Trip Overview
-- **Group size**: 11 men
-- **Dietary requirement**: 2 vegans, 9 omnivores
+- **Group size**: 12 men
+- **Dietary requirement**: 2 vegans, 10 omnivores
 - **Location**: Montriond, France (5 min from Morzine, 15 min from Portes du Soleil)
 - **Accommodation**: Airbnb - 5 bedrooms, sleeps 14
 - **Kitchen**: Fully equipped (confirm details with host)

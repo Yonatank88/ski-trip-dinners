@@ -87,7 +87,7 @@ const meals = [
       { item: "Sugar", category: "dry", qty: "100g" },
       { item: "Salt", category: "dry", qty: "1" }
     ],
-    helpers: [],
+    chefsBitches: ["Amit"],
     prepBefore: [
       "Buy all ingredients on arrival"
     ],
