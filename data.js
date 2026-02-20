@@ -114,7 +114,7 @@ const meals = [
       {
         name: "Roast Beef",
         type: "main",
-        ingredients: ["Roast beef (~1.5-2kg)", "Mustard", "Beef stock"]
+        ingredients: ["Roast beef (faux-filet)", "Mustard", "Beef stock"]
       },
       {
         name: "Brined Rotisserie Chicken",
@@ -149,7 +149,7 @@ const meals = [
       }
     ],
     ingredients: [
-      { item: "Roast beef (~1.5-2kg)", category: "meat", qty: "1 pc" },
+      { item: "Roast beef (faux-filet)", category: "meat", qty: "3kg" },
       { item: "Whole chickens", category: "meat", qty: "3 pcs" },
       { item: "Mustard", category: "dry", qty: "1 jar" },
       { item: "Cauliflower", category: "veg", qty: "2 pcs" },
@@ -194,7 +194,7 @@ const meals = [
     ],
     prepSameDay: [
       "Take beef out of fridge 1hr before cooking",
-      "Roast beef (~20min per 500g + 20min)",
+      "Roast beef (faux-filet) (~20min per 500g + 20min)",
       "Herb butter under chicken skin, lemon in cavity",
       "Roast chickens 1.5-2hrs at 180°C",
       "Roast cauliflower with olive oil and spices",
@@ -394,7 +394,7 @@ const meals = [
       {
         name: "Beef Bourguignon",
         type: "main",
-        ingredients: ["Beef chuck", "Red wine", "Bacon", "Pearl onions", "Mushrooms", "Carrots", "Garlic", "Fresh thyme", "Bay leaves", "Beef stock"]
+        ingredients: ["Beef chuck (paleron)", "Red wine", "Bacon", "Pearl onions", "Mushrooms", "Carrots", "Garlic", "Fresh thyme", "Bay leaves", "Beef stock"]
       },
       {
         name: "Mushroom Bourguignon",
@@ -419,7 +419,7 @@ const meals = [
       }
     ],
     ingredients: [
-      { item: "Beef chuck", category: "meat", qty: "1.5kg" },
+      { item: "Beef chuck (paleron)", category: "meat", qty: "1.5kg" },
       { item: "Red wine", category: "dry", qty: "1 bottle" },
       { item: "Bacon", category: "meat", qty: "200g" },
       { item: "Pearl onions", category: "veg", qty: "300g" },
