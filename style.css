@@ -970,6 +970,22 @@ main {
   border-color: var(--color-charcoal);
 }
 
+.filter.priority {
+  border-color: var(--color-copper);
+  color: var(--color-copper);
+  font-weight: 600;
+}
+
+.filter.priority:hover {
+  background: rgba(193, 127, 89, 0.08);
+}
+
+.filter.priority.active {
+  background: var(--color-copper);
+  color: var(--color-snow);
+  border-color: var(--color-copper);
+}
+
 /* Shopping list */
 .category-header {
   font-family: 'Cormorant Garamond', serif;

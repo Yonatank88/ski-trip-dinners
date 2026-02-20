@@ -20,6 +20,7 @@
 
     <div class="filters">
       <button class="filter active" data-filter="all">All</button>
+      <button class="filter priority" data-filter="first-shop">First Shop</button>
       <button class="filter" data-filter="meat">Meat</button>
       <button class="filter" data-filter="dairy">Dairy</button>
       <button class="filter" data-filter="veg">Veg</button>
@@ -44,12 +45,41 @@
       localStorage.setItem(STORAGE_KEY, JSON.stringify(checked));
     }
 
+    // Hard veg: items that keep well and can be bought on first run
+    const HARD_VEG = [
+      'potatoes', 'pumpkin', 'onion', 'carrot', 'parsnip', 'brussels sprout',
+      'garlic', 'cauliflower', 'leek', 'celery', 'cabbage', 'beetroot', 'turnip',
+      'mushroom', 'apple', 'lemon'
+    ];
+
+    function isHardVeg(item) {
+      const lower = item.item.toLowerCase();
+      return item.category === 'veg' && HARD_VEG.some(v => lower.includes(v));
+    }
+
+    function isFirstShop(item) {
+      // All dry goods
+      if (item.category === 'dry') return true;
+      // All hard veg
+      if (isHardVeg(item)) return true;
+      // All ingredients for Night 1 and Night 2
+      if (item.meals.some(m => m === 'Night 1' || m === 'Night 2')) return true;
+      return false;
+    }
+
     function render(filter = 'all') {
       const list = getShoppingList();
       const checked = getChecked();
       container.innerHTML = '';
 
-      const filtered = filter === 'all' ? list : list.filter(i => i.category === filter);
+      let filtered;
+      if (filter === 'all') {
+        filtered = list;
+      } else if (filter === 'first-shop') {
+        filtered = list.filter(isFirstShop);
+      } else {
+        filtered = list.filter(i => i.category === filter);
+      }
 
       let currentCategory = '';
       filtered.forEach(item => {

@@ -8,7 +8,7 @@ const meals = [
       {
         name: "Parsley Lemon Chicken",
         type: "main",
-        ingredients: ["Whole chickens (butchered)", "Olive oil", "Garlic", "Fresh parsley", "Lemons"]
+        ingredients: ["Whole chickens", "Olive oil", "Garlic", "Fresh parsley", "Lemons"]
       },
       {
         name: "Raw White Fish",
@@ -38,54 +38,54 @@ const meals = [
       {
         name: "Ragù (for Pasta Night)",
         type: "prep",
-        ingredients: ["Minced beef (ragù)", "Tinned tomatoes", "Tomato paste", "Red wine", "Onions", "Celery", "Carrots (ragù)", "Garlic", "Olive oil"]
+        ingredients: ["Minced beef", "Tinned tomatoes", "Tomato paste", "Red wine", "Onions", "Celery", "Carrots", "Garlic", "Olive oil"]
       },
       {
         name: "Chicken Stock",
         type: "prep",
-        ingredients: ["Chicken carcasses (from butchered chickens)", "Onions", "Carrots", "Celery", "Bay leaves", "Peppercorns"]
+        ingredients: ["Onions", "Carrots", "Celery", "Bay leaves", "Peppercorns"]
       },
       {
         name: "Pickles",
         type: "prep",
-        ingredients: ["Radishes", "Red onions (pickling)", "White vinegar", "Sugar", "Salt"]
+        ingredients: ["Radishes", "Red onions", "White vinegar", "Sugar", "Salt"]
       }
     ],
     ingredients: [
-      { item: "Whole chickens (butchered)", category: "meat", qty: "3" },
-      { item: "White fish fillets", category: "meat", qty: "4" },
+      { item: "Whole chickens", category: "meat", qty: "5 pcs" },
+      { item: "White fish fillets", category: "meat", qty: "4 fillets" },
       { item: "Firm tofu", category: "veg", qty: "2 blocks" },
       { item: "Fresh parsley", category: "veg", qty: "2 bunches" },
-      { item: "Lemons", category: "veg", qty: "4" },
+      { item: "Lemons", category: "veg", qty: "4 pcs" },
       { item: "Basmati rice", category: "dry", qty: "1kg" },
       { item: "Lettuce", category: "veg", qty: "3 heads" },
       { item: "Fresh herbs (salad)", category: "veg", qty: "1 bunch" },
       { item: "Pecans", category: "dry", qty: "200g" },
-      { item: "Cucumber", category: "veg", qty: "2" },
-      { item: "Apple", category: "veg", qty: "2" },
-      { item: "Pumpkin", category: "veg", qty: "1" },
-      { item: "Cumin", category: "dry", qty: "1" },
-      { item: "Paprika", category: "dry", qty: "1" },
-      { item: "Cinnamon", category: "dry", qty: "1" },
-      { item: "Minced beef (ragù)", category: "meat", qty: "1kg" },
-      { item: "Chicken carcasses (from butchered chickens)", category: "meat", qty: "3" },
+      { item: "Cucumber", category: "veg", qty: "2 pcs" },
+      { item: "Apple", category: "veg", qty: "2 pcs" },
+      { item: "Pumpkin", category: "veg", qty: "1 pc" },
+      { item: "Cumin", category: "dry", qty: "1 jar" },
+      { item: "Paprika", category: "dry", qty: "1 jar" },
+      { item: "Cinnamon", category: "dry", qty: "1 jar" },
+      { item: "Minced beef", category: "meat", qty: "3kg" },
       { item: "Tinned tomatoes", category: "dry", qty: "4 cans" },
-      { item: "Tomato paste", category: "dry", qty: "1" },
+      { item: "Tomato paste", category: "dry", qty: "1 tube" },
       { item: "Red wine", category: "dry", qty: "1 bottle" },
-      { item: "Onions", category: "veg", qty: "4" },
-      { item: "Carrots", category: "veg", qty: "3" },
-      { item: "Carrots (ragù)", category: "veg", qty: "3" },
+      { item: "Onions", category: "veg", qty: "4 pcs" },
+      { item: "Carrots", category: "veg", qty: "6 pcs" },
       { item: "Celery", category: "veg", qty: "1 head" },
       { item: "Garlic", category: "veg", qty: "2 heads" },
-      { item: "Bay leaves", category: "dry", qty: "4" },
+      { item: "Bay leaves", category: "dry", qty: "4 pcs" },
       { item: "Peppercorns", category: "dry", qty: "1 tsp" },
-      { item: "Olive oil", category: "dry", qty: "1" },
+      { item: "Olive oil", category: "dry", qty: "1 bottle" },
       { item: "Butter", category: "dairy", qty: "50g" },
       { item: "Radishes", category: "veg", qty: "2 bunches" },
-      { item: "Red onions (pickling)", category: "veg", qty: "4" },
+      { item: "Red onions", category: "veg", qty: "4 pcs" },
       { item: "White vinegar", category: "dry", qty: "500ml" },
       { item: "Sugar", category: "dry", qty: "100g" },
-      { item: "Salt", category: "dry", qty: "1" }
+      { item: "Salt", category: "dry", qty: "1 pack" },
+      { item: "Black pepper", category: "dry", qty: "1 pack" },
+      { item: "Plastic containers", category: "dry", qty: "1 pack" }
     ],
     chefsBitches: ["Amit"],
     prepBefore: [
@@ -114,7 +114,7 @@ const meals = [
       {
         name: "Roast Beef",
         type: "main",
-        ingredients: ["Roast beef (~1.5-2kg)", "Mustard (for beef)", "Beef stock"]
+        ingredients: ["Roast beef (~1.5-2kg)", "Mustard", "Beef stock"]
       },
       {
         name: "Brined Rotisserie Chicken",
@@ -124,23 +124,17 @@ const meals = [
       {
         name: "Whole Roasted Cauliflower",
         type: "vegan",
-        ingredients: ["Cauliflower (whole)", "Chickpeas (canned)", "Olive oil"]
+        ingredients: ["Cauliflower", "Chickpeas (canned)", "Olive oil"]
       },
       {
         name: "Crispy Roast Potatoes",
         type: "side",
-        ingredients: ["Potatoes (roast)"]
+        ingredients: ["Potatoes"]
       },
       {
         name: "Roasted Root Vegetables",
         type: "side",
         ingredients: ["Carrots", "Parsnips", "Brussels sprouts", "Red onions", "Olive oil"]
-      },
-      {
-        name: "Braised Leeks",
-        type: "side",
-        image: "images/braised-leeks.jpg",
-        ingredients: ["Leeks", "Butter", "White wine", "Homemade chicken stock"]
       },
       {
         name: "Green Salad",
@@ -151,38 +145,36 @@ const meals = [
         name: "French Onion Soup",
         type: "side",
         image: "images/onion-soup.jpg",
-        ingredients: ["Onions (soup)", "Beef stock", "Butter", "Crusty bread/baguettes", "Gruyère cheese", "Fresh thyme"]
+        ingredients: ["Onions", "Beef stock", "Butter", "Crusty bread/baguettes", "Gruyère cheese", "Fresh thyme"]
       }
     ],
     ingredients: [
-      { item: "Roast beef (~1.5-2kg)", category: "meat", qty: "1" },
-      { item: "Whole chickens", category: "meat", qty: "3" },
-      { item: "Mustard (for beef)", category: "dry", qty: "1 jar" },
-      { item: "Cauliflower (whole)", category: "veg", qty: "2" },
+      { item: "Roast beef (~1.5-2kg)", category: "meat", qty: "1 pc" },
+      { item: "Whole chickens", category: "meat", qty: "3 pcs" },
+      { item: "Mustard", category: "dry", qty: "1 jar" },
+      { item: "Cauliflower", category: "veg", qty: "2 pcs" },
       { item: "Chickpeas (canned)", category: "dry", qty: "2 cans" },
-      { item: "Potatoes (roast)", category: "veg", qty: "3kg" },
-      { item: "Carrots", category: "veg", qty: "1kg" },
+      { item: "Potatoes", category: "veg", qty: "3kg" },
+      { item: "Carrots", category: "veg", qty: "8 pcs" },
       { item: "Parsnips", category: "veg", qty: "500g" },
       { item: "Brussels sprouts", category: "veg", qty: "500g" },
-      { item: "Red onions", category: "veg", qty: "4" },
+      { item: "Red onions", category: "veg", qty: "4 pcs" },
       { item: "Garlic", category: "veg", qty: "2 heads" },
-      { item: "Lemons", category: "veg", qty: "3" },
+      { item: "Lemons", category: "veg", qty: "3 pcs" },
       { item: "Fresh herbs (thyme, rosemary)", category: "veg", qty: "2 bunches" },
-      { item: "Sugar", category: "dry", qty: "1" },
+      { item: "Sugar", category: "dry", qty: "50g" },
       { item: "Butter", category: "dairy", qty: "300g" },
-      { item: "Leeks", category: "veg", qty: "6" },
-      { item: "White wine", category: "dry", qty: "1 bottle" },
       { item: "Lettuce", category: "veg", qty: "3 heads" },
       { item: "Fresh herbs (salad)", category: "veg", qty: "1 bunch" },
       { item: "Hazelnuts", category: "dry", qty: "200g" },
-      { item: "Cucumber", category: "veg", qty: "2" },
-      { item: "Apple", category: "veg", qty: "2" },
-      { item: "Olive oil", category: "dry", qty: "1" },
-      { item: "Onions (soup)", category: "veg", qty: "6" },
+      { item: "Cucumber", category: "veg", qty: "2 pcs" },
+      { item: "Apple", category: "veg", qty: "2 pcs" },
+      { item: "Olive oil", category: "dry", qty: "1 bottle" },
+      { item: "Onions", category: "veg", qty: "6 pcs" },
       { item: "Beef stock", category: "dry", qty: "1L" },
       { item: "Gruyère cheese", category: "dairy", qty: "200g" },
       { item: "Fresh thyme", category: "veg", qty: "1 bunch" },
-      { item: "Crusty bread/baguettes", category: "dry", qty: "1" }
+      { item: "Crusty bread/baguettes", category: "dry", qty: "2 pcs" }
     ],
     brineRecipe: {
       title: "Simple Chicken Brine",
@@ -207,7 +199,6 @@ const meals = [
       "Roast chickens 1.5-2hrs at 180°C",
       "Roast cauliflower with olive oil and spices",
       "Roast potatoes and root veggies (45min at 200°C)",
-      "Braise leeks in butter, white wine and stock (30-40min)",
       "Slow-cook onion soup — caramelize onions, add stock, thyme, simmer 45min",
       "Ladle soup into bowls, top with bread and Gruyère, grill until bubbly",
       "Assemble green salad"
@@ -238,13 +229,18 @@ const meals = [
         name: "Cauliflower Steak",
         type: "vegan",
         image: "images/cauliflower-steak.jpg",
-        ingredients: ["Cauliflower (steaks)", "Olive oil", "Fresh herbs"]
+        ingredients: ["Cauliflower", "Olive oil", "Fresh herbs"]
       },
       {
         name: "Mac and Cheese",
         type: "side",
         image: "images/mac-and-cheese.jpg",
         ingredients: ["Macaroni pasta", "Cheddar cheese", "Butter", "Milk", "Flour", "Bacon"]
+      },
+      {
+        name: "Baked Potatoes",
+        type: "side",
+        ingredients: ["Potatoes", "Butter", "Sour cream", "Salt"]
       },
       {
         name: "Green Salad",
@@ -254,9 +250,9 @@ const meals = [
     ],
     ingredients: [
       { item: "Pork ribs", category: "meat", qty: "2-3 racks" },
-      { item: "Sausages", category: "meat", qty: "22" },
-      { item: "Vegan sausages", category: "veg", qty: "4" },
-      { item: "Cauliflower (steaks)", category: "veg", qty: "2" },
+      { item: "Sausages", category: "meat", qty: "22 pcs" },
+      { item: "Vegan sausages", category: "veg", qty: "4 pcs" },
+      { item: "Cauliflower", category: "veg", qty: "2 pcs" },
       { item: "Fresh herbs", category: "veg", qty: "1 bunch" },
       { item: "Macaroni pasta", category: "dry", qty: "500g" },
       { item: "Cheddar cheese", category: "dairy", qty: "300g" },
@@ -266,14 +262,16 @@ const meals = [
       { item: "Bacon", category: "meat", qty: "200g" },
       { item: "BBQ sauce", category: "dry", qty: "1 bottle" },
       { item: "Mustard (Dijon + whole grain)", category: "dry", qty: "2 jars" },
-      { item: "Smoked paprika", category: "dry", qty: "1" },
-      { item: "Brown sugar", category: "dry", qty: "1" },
-      { item: "Olive oil", category: "dry", qty: "1" },
+      { item: "Smoked paprika", category: "dry", qty: "1 jar" },
+      { item: "Brown sugar", category: "dry", qty: "1 pack" },
+      { item: "Olive oil", category: "dry", qty: "1 bottle" },
       { item: "Lettuce", category: "veg", qty: "3 heads" },
       { item: "Fresh herbs (salad)", category: "veg", qty: "1 bunch" },
       { item: "Almonds", category: "dry", qty: "200g" },
-      { item: "Cucumber", category: "veg", qty: "2" },
-      { item: "Apple", category: "veg", qty: "2" }
+      { item: "Cucumber", category: "veg", qty: "2 pcs" },
+      { item: "Apple", category: "veg", qty: "2 pcs" },
+      { item: "Potatoes", category: "veg", qty: "2kg" },
+      { item: "Sour cream", category: "dairy", qty: "1 tub" }
     ],
     chefsBitches: ["Gal", "Regev"],
     prepBefore: [
@@ -285,6 +283,7 @@ const meals = [
       "Cook sausages + vegan sausages",
       "Grill cauliflower steaks with oil and fresh herbs",
       "Make mac and cheese — béchamel, mix with pasta, top with bacon, bake",
+      "Bake potatoes at 200°C for 1hr, serve with butter and sour cream",
       "Assemble green salad"
     ]
   },
@@ -307,13 +306,12 @@ const meals = [
       {
         name: "Pasta Ragù",
         type: "main",
-        ingredients: ["Pasta (regular)", "Minced beef (ragù)", "Tinned tomatoes", "Tomato paste", "Red wine", "Onions", "Celery", "Carrots (ragù)", "Parmesan"]
+        ingredients: ["Pasta (regular)", "Minced beef", "Tinned tomatoes", "Tomato paste", "Red wine", "Onions", "Celery", "Carrots", "Parmesan"]
       },
       {
-        name: "Pasta Pomodoro",
+        name: "Pea & Mint Pasta",
         type: "vegan",
-        image: "images/pasta-pomodoro.jpg",
-        ingredients: ["Pasta (egg-free for vegan)", "Tinned tomatoes", "Tomato paste", "Onions"]
+        ingredients: ["Pasta (egg-free for vegan)", "Frozen peas", "Fresh mint", "Parmesan", "Olive oil", "Garlic"]
       },
       {
         name: "Pan-Fried Mushrooms",
@@ -329,7 +327,7 @@ const meals = [
       {
         name: "Caprese Salad",
         type: "side",
-        ingredients: ["Fresh mozzarella", "Tomatoes (caprese)", "Fresh basil", "Olive oil"]
+        ingredients: ["Fresh mozzarella", "Tomatoes", "Fresh basil", "Olive oil"]
       },
       {
         name: "Green Salad",
@@ -342,9 +340,9 @@ const meals = [
       { item: "Fresh ravioli (cheese)", category: "dairy", qty: "2 packs" },
       { item: "Pasta (egg-free for vegan)", category: "dry", qty: "500g" },
       { item: "Pasta (regular)", category: "dry", qty: "500g" },
-      { item: "Minced beef (ragù)", category: "meat", qty: "1kg" },
+      { item: "Minced beef", category: "meat", qty: "1kg" },
       { item: "Tinned tomatoes", category: "dry", qty: "4 cans" },
-      { item: "Tomato paste", category: "dry", qty: "1" },
+      { item: "Tomato paste", category: "dry", qty: "1 tube" },
       { item: "Fresh sage", category: "veg", qty: "1 bunch" },
       { item: "Butter", category: "dairy", qty: "200g" },
       { item: "Parmesan", category: "dairy", qty: "200g" },
@@ -353,20 +351,22 @@ const meals = [
       { item: "Green grapes", category: "veg", qty: "300g" },
       { item: "Fresh dill", category: "veg", qty: "1 bunch" },
       { item: "Feta cheese", category: "dairy", qty: "200g" },
-      { item: "Onions", category: "veg", qty: "4" },
+      { item: "Onions", category: "veg", qty: "4 pcs" },
       { item: "Celery", category: "veg", qty: "1 head" },
-      { item: "Carrots (ragù)", category: "veg", qty: "3" },
+      { item: "Carrots", category: "veg", qty: "3 pcs" },
       { item: "Red wine", category: "dry", qty: "1 bottle" },
       { item: "Fresh mozzarella", category: "dairy", qty: "400g" },
-      { item: "Tomatoes (caprese)", category: "veg", qty: "6" },
+      { item: "Tomatoes", category: "veg", qty: "6 pcs" },
       { item: "Fresh basil", category: "veg", qty: "1 bunch" },
       { item: "Mushrooms", category: "veg", qty: "1kg" },
       { item: "Fresh thyme", category: "veg", qty: "1 bunch" },
       { item: "Lettuce", category: "veg", qty: "3 heads" },
       { item: "Fresh herbs (salad)", category: "veg", qty: "1 bunch" },
       { item: "Pecans", category: "dry", qty: "200g" },
-      { item: "Cucumber", category: "veg", qty: "2" },
-      { item: "Apple", category: "veg", qty: "2" }
+      { item: "Cucumber", category: "veg", qty: "2 pcs" },
+      { item: "Apple", category: "veg", qty: "2 pcs" },
+      { item: "Frozen peas", category: "veg", qty: "500g" },
+      { item: "Fresh mint", category: "veg", qty: "1 bunch" }
     ],
     chefsBitches: ["Omri", "Ynon"],
     prepBefore: [
@@ -378,7 +378,7 @@ const meals = [
       "Warm chicken jus",
       "Make butter sage sauce",
       "Heat ragù",
-      "Make simple tomato sauce for vegans",
+      "Cook peas, blend with mint, garlic, olive oil and parmesan for pea & mint pasta sauce",
       "Pan-fry mushrooms in butter with thyme and garlic",
       "Blanch asparagus, ice bath, chill",
       "Toast hazelnuts, assemble salad with grapes, dill, feta",
@@ -394,17 +394,23 @@ const meals = [
       {
         name: "Beef Bourguignon",
         type: "main",
-        ingredients: ["Beef chuck (bourguignon)", "Red wine", "Bacon", "Pearl onions", "Mushrooms", "Carrots", "Garlic", "Fresh thyme", "Bay leaves", "Beef stock"]
+        ingredients: ["Beef chuck", "Red wine", "Bacon", "Pearl onions", "Mushrooms", "Carrots", "Garlic", "Fresh thyme", "Bay leaves", "Beef stock"]
       },
       {
         name: "Mushroom Bourguignon",
         type: "vegan",
-        ingredients: ["Mushrooms (bourguignon)", "Red wine", "Pearl onions", "Carrots", "Garlic", "Fresh thyme", "Bay leaves", "Vegetable stock"]
+        ingredients: ["Mushrooms", "Red wine", "Pearl onions", "Carrots", "Garlic", "Fresh thyme", "Bay leaves", "Vegetable stock"]
       },
       {
         name: "Mashed Potatoes",
         type: "side",
-        ingredients: ["Potatoes (mash)", "Butter", "Milk", "Salt"]
+        ingredients: ["Potatoes", "Butter", "Milk", "Salt"]
+      },
+      {
+        name: "Braised Leeks",
+        type: "side",
+        image: "images/braised-leeks.jpg",
+        ingredients: ["Leeks", "Butter", "White wine", "Homemade chicken stock"]
       },
       {
         name: "Green Salad",
@@ -413,26 +419,27 @@ const meals = [
       }
     ],
     ingredients: [
-      { item: "Beef chuck (bourguignon)", category: "meat", qty: "1.5kg" },
+      { item: "Beef chuck", category: "meat", qty: "1.5kg" },
       { item: "Red wine", category: "dry", qty: "1 bottle" },
       { item: "Bacon", category: "meat", qty: "200g" },
       { item: "Pearl onions", category: "veg", qty: "300g" },
-      { item: "Mushrooms", category: "veg", qty: "500g" },
-      { item: "Mushrooms (bourguignon)", category: "veg", qty: "500g" },
-      { item: "Carrots", category: "veg", qty: "4" },
+      { item: "Mushrooms", category: "veg", qty: "1kg" },
+      { item: "Carrots", category: "veg", qty: "4 pcs" },
       { item: "Garlic", category: "veg", qty: "1 head" },
       { item: "Fresh thyme", category: "veg", qty: "1 bunch" },
-      { item: "Bay leaves", category: "dry", qty: "4" },
+      { item: "Bay leaves", category: "dry", qty: "4 pcs" },
       { item: "Beef stock", category: "dry", qty: "500ml" },
       { item: "Vegetable stock", category: "dry", qty: "500ml" },
-      { item: "Potatoes (mash)", category: "veg", qty: "2kg" },
+      { item: "Potatoes", category: "veg", qty: "2kg" },
       { item: "Butter", category: "dairy", qty: "100g" },
       { item: "Milk", category: "dairy", qty: "200ml" },
       { item: "Lettuce", category: "veg", qty: "3 heads" },
       { item: "Fresh herbs (salad)", category: "veg", qty: "1 bunch" },
       { item: "Hazelnuts", category: "dry", qty: "200g" },
-      { item: "Cucumber", category: "veg", qty: "2" },
-      { item: "Apple", category: "veg", qty: "2" }
+      { item: "Cucumber", category: "veg", qty: "2 pcs" },
+      { item: "Apple", category: "veg", qty: "2 pcs" },
+      { item: "Leeks", category: "veg", qty: "6 pcs" },
+      { item: "White wine", category: "dry", qty: "1 bottle" }
     ],
     chefsBitches: ["Holtzman", "Roko"],
     prepBefore: [
@@ -443,6 +450,7 @@ const meals = [
       "Fry bacon, add pearl onions and mushrooms, brown",
       "Add wine, stock, herbs, beef — simmer 2-3hrs until tender",
       "For vegan: sauté mushrooms, add wine, stock, herbs, simmer 1hr",
+      "Braise leeks in butter, white wine and stock (30-40min)",
       "Boil potatoes until tender, mash with butter and milk",
       "Assemble green salad"
     ]
@@ -456,17 +464,17 @@ const meals = [
       {
         name: "Beef Burgers",
         type: "main",
-        ingredients: ["Burger patties", "Burger buns", "Cheddar cheese", "Lettuce", "Tomatoes (burger)", "Red onions (burger)", "Pickles", "Ketchup", "Mustard", "Mayo"]
+        ingredients: ["Burger patties", "Burger buns", "Cheddar cheese", "Lettuce", "Tomatoes", "Red onions", "Pickles", "Ketchup", "Mustard", "Mayo"]
       },
       {
         name: "Vegan Burgers",
         type: "vegan",
-        ingredients: ["Vegan burger patties", "Burger buns", "Vegan cheese", "Lettuce", "Tomatoes (burger)", "Red onions (burger)", "Pickles", "Ketchup", "Mustard", "Vegan mayo"]
+        ingredients: ["Vegan burger patties", "Burger buns", "Vegan cheese", "Lettuce", "Tomatoes", "Red onions", "Pickles", "Ketchup", "Mustard", "Vegan mayo"]
       },
       {
         name: "French Fries",
         type: "side",
-        ingredients: ["Potatoes (fries)", "Olive oil", "Salt"]
+        ingredients: ["Potatoes", "Olive oil", "Salt"]
       },
       {
         name: "Green Salad",
@@ -475,27 +483,26 @@ const meals = [
       }
     ],
     ingredients: [
-      { item: "Burger patties", category: "meat", qty: "18" },
-      { item: "Vegan burger patties", category: "veg", qty: "4" },
-      { item: "Burger buns", category: "dry", qty: "22" },
+      { item: "Burger patties", category: "meat", qty: "18 pcs" },
+      { item: "Vegan burger patties", category: "veg", qty: "4 pcs" },
+      { item: "Burger buns", category: "dry", qty: "22 pcs" },
       { item: "Cheddar cheese", category: "dairy", qty: "300g" },
       { item: "Vegan cheese", category: "veg", qty: "100g" },
-      { item: "Lettuce", category: "veg", qty: "2 heads" },
-      { item: "Tomatoes (burger)", category: "veg", qty: "6" },
-      { item: "Red onions (burger)", category: "veg", qty: "4" },
+      { item: "Tomatoes", category: "veg", qty: "6 pcs" },
+      { item: "Red onions", category: "veg", qty: "4 pcs" },
       { item: "Pickles", category: "dry", qty: "1 jar" },
       { item: "Ketchup", category: "dry", qty: "1 bottle" },
       { item: "Mustard", category: "dry", qty: "1 jar" },
       { item: "Mayo", category: "dairy", qty: "1 jar" },
       { item: "Vegan mayo", category: "veg", qty: "1 jar" },
-      { item: "Potatoes (fries)", category: "veg", qty: "3kg" },
-      { item: "Olive oil", category: "dry", qty: "1" },
-      { item: "Salt", category: "dry", qty: "1" },
-      { item: "Lettuce", category: "veg", qty: "3 heads" },
+      { item: "Potatoes", category: "veg", qty: "3kg" },
+      { item: "Olive oil", category: "dry", qty: "1 bottle" },
+      { item: "Salt", category: "dry", qty: "1 pack" },
+      { item: "Lettuce", category: "veg", qty: "5 heads" },
       { item: "Fresh herbs (salad)", category: "veg", qty: "1 bunch" },
       { item: "Almonds", category: "dry", qty: "200g" },
-      { item: "Cucumber", category: "veg", qty: "2" },
-      { item: "Apple", category: "veg", qty: "2" }
+      { item: "Cucumber", category: "veg", qty: "2 pcs" },
+      { item: "Apple", category: "veg", qty: "2 pcs" }
     ],
     chefsBitches: ["Muroch", "Yaniv"],
     prepBefore: [
@@ -583,7 +590,84 @@ function getIngredientDetails(meal, ingredientName) {
   return meal.ingredients.find(i => i.item === ingredientName);
 }
 
-// Generate shopping list from all meals
+// Parse a quantity string into { value, unit }
+function parseQty(qty) {
+  if (!qty) return { value: 0, unit: '' };
+  const s = String(qty).trim();
+  // Handle ranges like "2-3 racks" → take midpoint
+  const rangeMatch = s.match(/^(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)\s*(.*)$/);
+  if (rangeMatch) {
+    const lo = parseFloat(rangeMatch[1]);
+    const hi = parseFloat(rangeMatch[2]);
+    return { value: (lo + hi) / 2, unit: rangeMatch[3].trim() };
+  }
+  // Handle "200g", "500ml", "1.5kg", "2L"
+  const noSpaceMatch = s.match(/^(\d+(?:\.\d+)?)\s*(g|kg|ml|L|l)$/);
+  if (noSpaceMatch) {
+    return { value: parseFloat(noSpaceMatch[1]), unit: noSpaceMatch[2] };
+  }
+  // Handle "3 heads", "1 bottle", "2 tbsp", "1 bunch"
+  const spaceMatch = s.match(/^(\d+(?:\.\d+)?)\s+(.+)$/);
+  if (spaceMatch) {
+    return { value: parseFloat(spaceMatch[1]), unit: spaceMatch[2] };
+  }
+  // Handle plain number "4"
+  const numMatch = s.match(/^(\d+(?:\.\d+)?)$/);
+  if (numMatch) {
+    return { value: parseFloat(numMatch[1]), unit: '' };
+  }
+  // Can't parse — return as-is
+  return { value: 0, unit: '', raw: s };
+}
+
+// Normalize unit to base form for grouping
+function normalizeUnit(unit) {
+  const u = unit.toLowerCase();
+  // Weight: convert kg to g
+  if (u === 'kg') return { unit: 'g', multiplier: 1000 };
+  if (u === 'g') return { unit: 'g', multiplier: 1 };
+  // Volume: convert L to ml
+  if (u === 'l') return { unit: 'ml', multiplier: 1000 };
+  if (u === 'ml') return { unit: 'ml', multiplier: 1 };
+  // Plurals → singular for grouping
+  const singular = u.replace(/s$/, '');
+  return { unit: singular, multiplier: 1 };
+}
+
+// Format a summed quantity back to a nice string
+function formatQty(value, baseUnit) {
+  if (baseUnit === 'g' && value >= 1000) {
+    const kg = value / 1000;
+    return (kg % 1 === 0 ? kg : kg.toFixed(1)) + 'kg';
+  }
+  if (baseUnit === 'g') {
+    return (value % 1 === 0 ? value : Math.round(value)) + 'g';
+  }
+  if (baseUnit === 'ml' && value >= 1000) {
+    const l = value / 1000;
+    return (l % 1 === 0 ? l : l.toFixed(1)) + 'L';
+  }
+  if (baseUnit === 'ml') {
+    return (value % 1 === 0 ? value : Math.round(value)) + 'ml';
+  }
+  const displayVal = value % 1 === 0 ? value : parseFloat(value.toFixed(1));
+  if (!baseUnit) return String(displayVal);
+  // Pluralize if > 1
+  let unit = baseUnit;
+  if (displayVal > 1 && !unit.endsWith('s')) {
+    // Handle "bunch" → "bunches", "box" → "boxes"
+    if (unit.endsWith('ch') || unit.endsWith('sh') || unit.endsWith('x') || unit.endsWith('ss')) {
+      unit = unit + 'es';
+    } else {
+      unit = unit + 's';
+    }
+  } else if (displayVal <= 1 && unit.endsWith('s')) {
+    unit = unit.slice(0, -1);
+  }
+  return displayVal + ' ' + unit;
+}
+
+// Generate shopping list from all meals, summing quantities
 function getShoppingList() {
   const list = {};
   meals.forEach(meal => {
@@ -591,17 +675,48 @@ function getShoppingList() {
       const key = ing.item;
       if (list[key]) {
         list[key].meals.push(meal.night);
+        list[key].rawQtys.push(ing.qty);
       } else {
         list[key] = {
           item: ing.item,
           category: ing.category,
-          qty: ing.qty,
+          rawQtys: [ing.qty],
           meals: [meal.night]
         };
       }
     });
   });
-  return Object.values(list).sort((a, b) => {
+
+  // Sum quantities for each item
+  const result = Object.values(list).map(entry => {
+    const parsed = entry.rawQtys.map(parseQty);
+    // If any couldn't be parsed, just join them
+    if (parsed.some(p => p.raw)) {
+      return { ...entry, qty: entry.rawQtys.join(' + ') };
+    }
+    // If only one entry, use original string
+    if (parsed.length === 1) {
+      return { ...entry, qty: entry.rawQtys[0] };
+    }
+    // Normalize and sum
+    const normalized = parsed.map(p => {
+      const n = normalizeUnit(p.unit);
+      return { value: p.value * n.multiplier, baseUnit: n.unit };
+    });
+    // Check all same base unit
+    const baseUnits = [...new Set(normalized.map(n => n.baseUnit))];
+    if (baseUnits.length === 1) {
+      const total = normalized.reduce((sum, n) => sum + n.value, 0);
+      return { ...entry, qty: formatQty(total, baseUnits[0]) };
+    }
+    // Mixed units — just join originals
+    return { ...entry, qty: entry.rawQtys.join(' + ') };
+  });
+
+  // Clean up rawQtys from result
+  result.forEach(r => delete r.rawQtys);
+
+  return result.sort((a, b) => {
     const catOrder = { meat: 0, dairy: 1, veg: 2, dry: 3 };
     return catOrder[a.category] - catOrder[b.category];
   });
