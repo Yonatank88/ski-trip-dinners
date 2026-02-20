@@ -259,7 +259,7 @@ const meals = [
       { item: "Butter", category: "dairy", qty: "50g" },
       { item: "Milk", category: "dairy", qty: "500ml" },
       { item: "Flour", category: "dry", qty: "2 tbsp" },
-      { item: "Bacon", category: "meat", qty: "200g" },
+      { item: "Bacon", category: "meat", qty: "400g" },
       { item: "BBQ sauce", category: "dry", qty: "1 bottle" },
       { item: "Mustard (Dijon + whole grain)", category: "dry", qty: "2 jars" },
       { item: "Smoked paprika", category: "dry", qty: "1 jar" },
@@ -421,7 +421,7 @@ const meals = [
     ingredients: [
       { item: "Beef chuck (paleron)", category: "meat", qty: "1.5kg" },
       { item: "Red wine", category: "dry", qty: "1 bottle" },
-      { item: "Bacon", category: "meat", qty: "200g" },
+      { item: "Bacon", category: "meat", qty: "400g" },
       { item: "Pearl onions", category: "veg", qty: "300g" },
       { item: "Mushrooms", category: "veg", qty: "1kg" },
       { item: "Carrots", category: "veg", qty: "4 pcs" },
