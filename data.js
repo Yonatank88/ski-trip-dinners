@@ -511,6 +511,73 @@ const meals = [
   }
 ];
 
+// Load saved edits from localStorage
+const MEALS_STORAGE_KEY = 'ski-trip-meals-edits';
+
+function loadMealEdits() {
+  const saved = localStorage.getItem(MEALS_STORAGE_KEY);
+  if (!saved) return;
+  try {
+    const edits = JSON.parse(saved);
+    edits.forEach(edit => {
+      const meal = meals.find(m => m.id === edit.id);
+      if (meal) {
+        meal.ingredients = edit.ingredients;
+        // Update dish ingredient lists to stay in sync
+        meal.dishes.forEach(dish => {
+          dish.ingredients = dish.ingredients.filter(ingName =>
+            meal.ingredients.some(i => i.item === ingName)
+          );
+        });
+      }
+    });
+  } catch (e) {
+    console.error('Failed to load meal edits:', e);
+  }
+}
+
+function saveMealEdits() {
+  const edits = meals.map(m => ({ id: m.id, ingredients: m.ingredients }));
+  localStorage.setItem(MEALS_STORAGE_KEY, JSON.stringify(edits));
+}
+
+function updateMealIngredient(mealId, oldItem, newQty) {
+  const meal = meals.find(m => m.id === mealId);
+  if (!meal) return;
+  const ing = meal.ingredients.find(i => i.item === oldItem);
+  if (ing) ing.qty = newQty;
+  saveMealEdits();
+}
+
+function deleteMealIngredient(mealId, itemName) {
+  const meal = meals.find(m => m.id === mealId);
+  if (!meal) return;
+  meal.ingredients = meal.ingredients.filter(i => i.item !== itemName);
+  // Remove from dish ingredient lists too
+  meal.dishes.forEach(dish => {
+    dish.ingredients = dish.ingredients.filter(name => name !== itemName);
+  });
+  saveMealEdits();
+}
+
+function addMealIngredient(mealId, item, category, qty, dishName) {
+  const meal = meals.find(m => m.id === mealId);
+  if (!meal) return;
+  // Don't add duplicate
+  if (meal.ingredients.some(i => i.item === item)) return false;
+  meal.ingredients.push({ item, category, qty });
+  // If a dish is specified, add to that dish's ingredient list
+  if (dishName) {
+    const dish = meal.dishes.find(d => d.name === dishName);
+    if (dish) dish.ingredients.push(item);
+  }
+  saveMealEdits();
+  return true;
+}
+
+// Apply saved edits on load
+loadMealEdits();
+
 // Get ingredient details by name
 function getIngredientDetails(meal, ingredientName) {
   return meal.ingredients.find(i => i.item === ingredientName);

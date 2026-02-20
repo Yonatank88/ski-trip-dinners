@@ -94,17 +94,23 @@
           </div>
 
           <button class="section-toggle" data-section="ingredients-${meal.id}">
-            <h3>Ingredients (${meal.ingredients.length})</h3>
+            <h3>Ingredients (<span class="ing-count" id="ing-count-${meal.id}">${meal.ingredients.length}</span>)</h3>
             ${chevronSvg}
           </button>
           <div class="section-content" id="ingredients-${meal.id}">
-            <div class="ingredients-grid">
+            <button class="edit-toggle-btn" data-meal-id="${meal.id}">
+              <svg viewBox="0 0 24 24" width="14" height="14"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+              Edit
+            </button>
+            <div class="ingredients-grid" id="ing-grid-${meal.id}">
               ${meal.ingredients.map(i => `
                 <span class="ingredient-tag">
                   <span class="cat ${i.category}"></span>
                   ${i.item} · ${i.qty}
                 </span>
               `).join('')}
+            </div>
+            <div class="ingredients-edit-list" id="ing-edit-${meal.id}" style="display:none;">
             </div>
           </div>
 
@@ -167,6 +173,121 @@
     document.querySelectorAll('.dish-item').forEach(dish => {
       dish.addEventListener('click', () => {
         dish.classList.toggle('expanded');
+      });
+    });
+
+    // ==================== EDIT FUNCTIONALITY ====================
+
+    function renderIngredientGrid(mealId) {
+      const meal = meals.find(m => m.id === mealId);
+      const grid = document.getElementById(`ing-grid-${mealId}`);
+      grid.innerHTML = meal.ingredients.map(i => `
+        <span class="ingredient-tag">
+          <span class="cat ${i.category}"></span>
+          ${i.item} · ${i.qty}
+        </span>
+      `).join('');
+      document.getElementById(`ing-count-${mealId}`).textContent = meal.ingredients.length;
+    }
+
+    function renderEditList(mealId) {
+      const meal = meals.find(m => m.id === mealId);
+      const editContainer = document.getElementById(`ing-edit-${mealId}`);
+      editContainer.innerHTML = `
+        <div class="edit-items">
+          ${meal.ingredients.map(i => `
+            <div class="edit-row" data-item="${i.item}">
+              <span class="cat ${i.category}"></span>
+              <span class="edit-item-name">${i.item}</span>
+              <input type="text" class="edit-qty-input" value="${i.qty}" data-meal="${mealId}" data-item="${i.item}">
+              <button class="edit-delete-btn" data-meal="${mealId}" data-item="${i.item}" title="Remove ingredient">
+                <svg viewBox="0 0 24 24" width="14" height="14"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            </div>
+          `).join('')}
+        </div>
+        <div class="add-ingredient-form">
+          <h4>Add Ingredient</h4>
+          <div class="add-row">
+            <input type="text" class="add-input add-name" placeholder="Ingredient name" data-meal="${mealId}">
+            <input type="text" class="add-input add-qty" placeholder="Qty" data-meal="${mealId}">
+            <select class="add-input add-cat" data-meal="${mealId}">
+              <option value="veg">Veg</option>
+              <option value="meat">Meat</option>
+              <option value="dairy">Dairy</option>
+              <option value="dry">Dry</option>
+            </select>
+            <button class="add-btn" data-meal="${mealId}">Add</button>
+          </div>
+        </div>
+      `;
+
+      // Attach event listeners for qty changes
+      editContainer.querySelectorAll('.edit-qty-input').forEach(input => {
+        input.addEventListener('change', () => {
+          updateMealIngredient(mealId, input.dataset.item, input.value.trim());
+        });
+      });
+
+      // Attach delete listeners
+      editContainer.querySelectorAll('.edit-delete-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const itemName = btn.dataset.item;
+          if (confirm('Remove "' + itemName + '" from this meal?')) {
+            deleteMealIngredient(mealId, itemName);
+            renderEditList(mealId);
+            renderIngredientGrid(mealId);
+          }
+        });
+      });
+
+      // Attach add listener
+      const addBtn = editContainer.querySelector('.add-btn');
+      addBtn.addEventListener('click', () => {
+        const nameInput = editContainer.querySelector('.add-name');
+        const qtyInput = editContainer.querySelector('.add-qty');
+        const catSelect = editContainer.querySelector('.add-cat');
+        const name = nameInput.value.trim();
+        const qty = qtyInput.value.trim();
+        const category = catSelect.value;
+        if (!name) { nameInput.focus(); return; }
+        if (!qty) { qtyInput.focus(); return; }
+        const added = addMealIngredient(mealId, name, category, qty);
+        if (added === false) {
+          alert('This ingredient already exists in the meal.');
+          return;
+        }
+        nameInput.value = '';
+        qtyInput.value = '';
+        renderEditList(mealId);
+        renderIngredientGrid(mealId);
+      });
+    }
+
+    // Edit toggle buttons
+    document.querySelectorAll('.edit-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const mealId = parseInt(btn.dataset.mealId);
+        const grid = document.getElementById(`ing-grid-${mealId}`);
+        const editList = document.getElementById(`ing-edit-${mealId}`);
+        const isEditing = btn.classList.contains('active');
+
+        if (isEditing) {
+          // Exit edit mode
+          btn.classList.remove('active');
+          btn.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> Edit`;
+          grid.style.display = '';
+          editList.style.display = 'none';
+          renderIngredientGrid(mealId);
+        } else {
+          // Enter edit mode
+          btn.classList.add('active');
+          btn.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Done`;
+          grid.style.display = 'none';
+          editList.style.display = 'block';
+          renderEditList(mealId);
+        }
       });
     });
   </script>

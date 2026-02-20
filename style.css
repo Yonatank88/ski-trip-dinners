@@ -641,6 +641,207 @@ main {
 .ingredient-tag .cat.veg { background: var(--color-sage); }
 .ingredient-tag .cat.dry { background: var(--color-stone); }
 
+/* ==================== EDIT MODE ==================== */
+.edit-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  margin-bottom: 1rem;
+  background: transparent;
+  border: 1px solid var(--color-stone-light);
+  border-radius: 100px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-stone);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.edit-toggle-btn svg {
+  fill: currentColor;
+}
+
+.edit-toggle-btn:hover {
+  border-color: var(--color-copper);
+  color: var(--color-copper);
+}
+
+.edit-toggle-btn.active {
+  background: var(--color-copper);
+  color: var(--color-snow);
+  border-color: var(--color-copper);
+}
+
+.ingredients-edit-list {
+  animation: slideDown 0.3s ease;
+}
+
+.edit-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.edit-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: var(--color-cream);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.edit-row:hover {
+  border-color: rgba(193, 127, 89, 0.15);
+  background: var(--color-cream-dark);
+}
+
+.edit-row .cat {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.edit-row .cat.meat { background: var(--color-ember); }
+.edit-row .cat.dairy { background: var(--color-gold); }
+.edit-row .cat.veg { background: var(--color-sage); }
+.edit-row .cat.dry { background: var(--color-stone); }
+
+.edit-item-name {
+  flex: 1;
+  font-size: 0.85rem;
+  color: var(--color-charcoal);
+  font-weight: 500;
+}
+
+.edit-qty-input {
+  width: 90px;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--color-stone-light);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-charcoal);
+  background: var(--color-snow);
+  text-align: center;
+  transition: border-color 0.2s ease;
+}
+
+.edit-qty-input:focus {
+  outline: none;
+  border-color: var(--color-copper);
+  box-shadow: 0 0 0 2px rgba(193, 127, 89, 0.15);
+}
+
+.edit-delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-stone-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.edit-delete-btn svg {
+  fill: currentColor;
+}
+
+.edit-delete-btn:hover {
+  background: rgba(166, 93, 78, 0.1);
+  color: var(--color-ember);
+}
+
+/* Add ingredient form */
+.add-ingredient-form {
+  padding: 1.25rem;
+  background: var(--color-parchment);
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--color-stone-light);
+}
+
+.add-ingredient-form h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-stone);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.75rem;
+}
+
+.add-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.add-input {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--color-stone-light);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-charcoal);
+  background: var(--color-snow);
+  transition: border-color 0.2s ease;
+}
+
+.add-input:focus {
+  outline: none;
+  border-color: var(--color-copper);
+  box-shadow: 0 0 0 2px rgba(193, 127, 89, 0.15);
+}
+
+.add-name {
+  flex: 2;
+  min-width: 140px;
+}
+
+.add-qty {
+  flex: 1;
+  min-width: 70px;
+}
+
+.add-cat {
+  flex: 1;
+  min-width: 80px;
+  cursor: pointer;
+}
+
+.add-btn {
+  padding: 0.45rem 1.25rem;
+  background: var(--color-copper);
+  color: var(--color-snow);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.add-btn:hover {
+  background: var(--color-copper-light);
+  transform: translateY(-1px);
+}
+
 /* ==================== PREP LISTS ==================== */
 .prep-list {
   list-style: none;
@@ -935,6 +1136,28 @@ main {
   .section-toggle:hover {
     margin: 0;
     padding: 1rem 0;
+  }
+
+  .edit-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .edit-item-name {
+    flex: 1 1 60%;
+  }
+
+  .edit-qty-input {
+    flex: 1;
+    min-width: 70px;
+  }
+
+  .add-row {
+    flex-direction: column;
+  }
+
+  .add-input, .add-btn {
+    width: 100%;
   }
 }
 
